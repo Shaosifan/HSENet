@@ -23,7 +23,7 @@ We propose a novel hybrid-scale self-similarity exploitation network (HSENet) fo
 
 
 ## Citation 
-if you find this code useful for your research, please cite our paper:
+If you find this code useful for your research, please cite our paper:
 ``````
 @article{lei2021hybrid,
   title={Hybrid-Scale Self-Similarity Exploitation for Remote Sensing Image Super-Resolution},

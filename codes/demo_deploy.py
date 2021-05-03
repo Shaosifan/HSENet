@@ -76,13 +76,8 @@ def deploy(args, sr_model):
                 sr = sr_model(lr)
 
             sr_np = np.array(sr.cpu().detach())
-            sr_np = sr_np[0, :].transpose([1, 2, 0])
-            lr_np = lr_np * args.rgb_range / 255.
+            final_sr = sr_np[0, :].transpose([1, 2, 0])
 
-            # Again back projection for the final fused result
-            for bp_iter in range(args.back_projection_iters):
-                final_sr = utils.back_projection(sr_np, lr_np, down_kernel='cubic',
-                                           up_kernel='cubic', sf=args.scale[0], range=args.rgb_range)
             if args.rgb_range == 1:
                 final_sr = np.clip(final_sr * 255, 0, args.rgb_range * 255)
             else:
@@ -98,28 +93,12 @@ if __name__ == '__main__':
 
     # args parameter setting
     # UCMerced data
-    args.pre_train = '../experiment/UCMerced-models/x3/TSRx3__UCMerced_2/model/model_best.pt'
-    args.dir_data = 'F:/research/dataset/SR for remote sensing/UCMerced_LandUse/test/LR_x3'
-    args.dir_out = '../experiment/results/UCMerced/x3/TSRx3__UCMerced_2'
-
-    # AID data
-    # args.pre_train = '../experiment/AID-models/x2/TSRx2_AID_endep8_dedep1/model/model_best.pt'
-    # args.dir_data = 'F:/research/dataset/SR for remote sensing/AID_dataset/test/LR_x2'
-    # args.dir_out = '../experiment/results/AID/x2/TSR'
+    args.pre_train = '../experiment/HSENETx4_UCMerced/model/model_best.pt'
+    args.dir_data = 'F:/research/dataset/SR for remote sensing/UCMerced_LandUse/test/LR_x4'
+    args.dir_out = '../experiment/results/HSENETx4_UCMerced'
 
     checkpoint = utils.checkpoint(args)
     sr_model = model.Model(args, checkpoint)
     sr_model.eval()
-
-    # # analyse the params of the load model
-    # pytorch_total_params = sum(p.numel() for p in sr_model.parameters())
-    # print(pytorch_total_params)
-    # pytorch_total_params2 = sum(p.numel() for p in sr_model.parameters() if p.requires_grad)
-    # print(pytorch_total_params2)
-    #
-    # for name, p in sr_model.named_parameters():
-    #     print(name)
-    #     print(p.numel())
-    #     print('========')
 
     deploy(args, sr_model)

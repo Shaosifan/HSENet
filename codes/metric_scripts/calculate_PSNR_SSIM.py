@@ -14,12 +14,10 @@ def main():
 
     # GT - Ground-truth;
     # Gen: Generated / Restored / Recovered images
-    folder_GT = 'F:/research/dataset/UCMerced_LandUse/test-x3/HR'
-    folder_Gen = 'F:/research/results/UCMerced/x3/'
-    # folder_GT = 'F:/research/dataset/SR for remote sensing/AID_dataset/test/HR'
-    # folder_Gen = 'F:/research/codes/My-projects/transformer-for-sr/experiment/results/AID/x4/DCM'
+    folder_GT = 'F:/research/dataset/SR for remote sensing/UCMerced_LandUse//test/HR'
+    folder_Gen = '../../experiment/results/HSENETx4_UCMerced'
 
-    crop_border = 3  # same with scale
+    crop_border = 4  # same with scale
     suffix = ''  # suffix for Gen images
     test_Y = False  # True: test Y channel only; False: test RGB channels
 

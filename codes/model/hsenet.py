@@ -87,7 +87,7 @@ class HSEM(nn.Module):
 
         # fusion x_down and x_down2
         x_down = F.interpolate(x_down, size=(x_base.shape[2], x_base.shape[3]),
-                               mode='bilinear', align_corners=True)
+                               mode='bilinear')
         ms = self.NonLocal_base(x_base, x_down)
         ms = self.tail(ms)
 

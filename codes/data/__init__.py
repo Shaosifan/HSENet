@@ -11,9 +11,9 @@ def create_dataloaders(args):
                             train=False)
     elif args.dataset == 'UCMerced':
         from data.ucmerced import UCMercedDataset
-        training_set = UCMercedDataset(args, root_dir='F:/research/dataset/SR for remote sensing/UCMerced_LandUse/slipt-train-val/train-x3',
+        training_set = UCMercedDataset(args, root_dir='F:/research/dataset/SR for remote sensing/UCMerced_LandUse/slipt-train-val/train',
                                  train=True)
-        val_set = UCMercedDataset(args, root_dir='F:/research/dataset/SR for remote sensing/UCMerced_LandUse/slipt-train-val/val-x3',
+        val_set = UCMercedDataset(args, root_dir='F:/research/dataset/SR for remote sensing/UCMerced_LandUse/slipt-train-val/val',
                             train=False)
     elif args.dataset == 'DIV2K':
         from data.div2k import DIV2KDataset

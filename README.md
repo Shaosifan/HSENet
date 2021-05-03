@@ -34,7 +34,7 @@ python demo_train.py --model=HSENET --dataset=UCMerced --scale=2 --patch_size=96
 The train/val data pathes are set in [data/__init__.py](codes/data/__init__.py) 
 
 ## Test 
-The test data path and the save path can be edited in [demo_deploy.py](codes/data/__init__.py)
+The test data path and the save path can be edited in [demo_deploy.py](codes/demo_deploy.py)
 
 ```
 # x4
@@ -46,7 +46,7 @@ python demo_deploy.py --model=HSENET --scale=2
 ```
 
 ## Evaluation 
-Compute the evaluated results in term of PSNR and SSIM, where the SR/HR paths can be edited in [calculate_PSNR_SSIM.py](codes/data_scripts/calculate_PSNR_SSIM.py)
+Compute the evaluated results in term of PSNR and SSIM, where the SR/HR paths can be edited in [calculate_PSNR_SSIM.py](codes/metric_scripts/calculate_PSNR_SSIM.py)
 
 ```
 cd metric_scripts 
@@ -67,4 +67,5 @@ If you find this code useful for your research, please cite our paper:
 
 ## Acknowledgements 
 This code is built on [RCAN (Pytorch)](https://github.com/yulunzhang/RCAN) and [EDSR (Pytorch)](https://github.com/sanghyun-son/EDSR-PyTorch). We thank the authors for sharing the codes.  
+
 

@@ -26,9 +26,9 @@ Download the UCMerced dataset (the data has been splted into train/val/test set 
 # x4
 python demo_train.py --model=HSENET --dataset=UCMerced --scale=4 --patch_size=192 --ext=img --save=HSENETx4_UCMerced
 # x3
-python demo_train.py --model=HSENET --dataset=UCMerced --scale=3 --patch_size=144 --ext=img --save=HSENETx4_UCMerced
+python demo_train.py --model=HSENET --dataset=UCMerced --scale=3 --patch_size=144 --ext=img --save=HSENETx3_UCMerced
 # x2
-python demo_train.py --model=HSENET --dataset=UCMerced --scale=2 --patch_size=96 --ext=img --save=HSENETx4_UCMerced
+python demo_train.py --model=HSENET --dataset=UCMerced --scale=2 --patch_size=96 --ext=img --save=HSENETx2_UCMerced
 ```
 
 The train/val data pathes are set in [data/__init__.py](codes/data/__init__.py) 

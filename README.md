@@ -33,8 +33,9 @@ python demo_train.py --model=HSENET --dataset=UCMerced --scale=2 --patch_size=96
 
 The train/val data pathes are set in [data/__init__.py](codes/data/__init__.py) 
 
+
 ## Test 
-The test data path and the save path can be edited in [demo_deploy.py](codes/demo_deploy.py)
+The trained HSENet model on UCMerced dataset can be found here [[Baidu Drive](https://pan.baidu.com/s/1UDzDebZCR-ixfpy_VgR09g), password:qfs2][[Google Drive](https://drive.google.com/file/d/1on5IiGOTorlSV0fdOSQCupT6PsgaiXYB/view)]. The test data path and the save path can be edited in [demo_deploy.py](codes/demo_deploy.py)
 
 ```
 # x4
